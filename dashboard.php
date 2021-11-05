@@ -7,6 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
@@ -22,7 +23,7 @@
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
               <a href="#" class="nav-link text-white">
-                Dashboard
+                Consultas
               </a>
             </li>
             <li>
@@ -38,42 +39,88 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h2>Solicitud y reporte de eventos.</h2>
-        <p>De ser necesario por favor indicar horarios de los eventos en los <b>detalles</b>. En caso de no ser
-          requerida la <b>fecha fin</b> no es requerida.</p>
+</br>
+        <h3>SOLICITUDES Y REPORTE DE EVENTOS</h3>
+        <p>De ser necesario por favor indicar horarios de los eventos en los <b>detalles</b>. </br>
+        En caso de no ser requerida la <b>fecha fin</b> no es requerida.</p>
+</br><hr></br>
         <form>
-          <label>Fecha Inicio</label>
+          <small><b>Fecha Inicio</b></small>
           <input class="form-control" type="date" name="f_ini" required>
-          <label>Fecha Fin</label>
+          <small><b>Fecha Fin</b></small>
           <input class="form-control" type="date" name="f_fin">
-          <label>Zona</label>
+          <small><b>Zona</b></small>
           <select class="form-control" type="text" name="zona" required>
+          <option value="" disabled selected>--Seleccionar--</option>
+            <option value="ASIA">ASIA</option>
+            <option value="AUSTRALIA">AUSTRALIA</option>
+            <option value="EUROPA">EUROPA</option>
             <option value="LATAM">LATAM</option>
-            <option value="LATAM">LATAM</option>
-            <option value="LATAM">LATAM</option>
-            <option value="LATAM">LATAM</option>
-            <option value="LATAM">LATAM</option>
+            <option value="NORTE AMÉRICA">NORTE AMÉRICA</option>
           </select>
-          <label>Tipo</label>
+          <small><b>Tipo</b></small>
           <select class="form-control" type="text" name="tipo" required>
-            <option value="Deportes">Deportes</option>
+          <option value="" disabled selected>--Seleccionar--</option>
             <option value="Cine">Cine</option>
+            <option value="Deportes">Deportes</option>
             <option value="Televisión">Televisión</option>
             <option value="Series">Series</option>
             <option value="Otro">Otro</option>
           </select>
-          <label>Detalles</label>
+          <small><b>Detalles</b></small>
           <textarea class="form-control" type="text" name="detalles" required>
-</textarea>
+            </textarea>
+            <input class="form-control btn btn-outline-success" type="submit" name="enviar" value="Registrar"> 
         </form>
       </div>
       <div class="col-md-4">
-
+      </br>
+      <canvas id="myChart" width="400" height="400"></canvas>
       </div>
     </div>
   </div>
 
 
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Publicadas', 'Listas', 'Pendientes'],
+        datasets: [{
+            label: 'Registro por Semana',
+            data: [12, 7, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+
+</br><hr>
+<footer class="text-center">
+  <p>&copy <?php echo date("Y"); ?> </br>
+<a href="http://verdaluno.com">verdaluno.com</a></p>
+</footer>
 </body>
 
 </html>
