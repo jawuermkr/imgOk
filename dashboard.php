@@ -9,7 +9,7 @@ if ($_SESSION['correcto'] != 1) {
 <html>
 
 <head>
-  <title>Marketing Latino - Mio | Verda Luno</title>
+  <title>Marketing CreA | by: Verda Luno</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -58,7 +58,7 @@ if ($_SESSION['correcto'] != 1) {
         </br>
         <h3>SOLICITUDES Y REPORTE DE EVENTOS</h3>
         <p>De ser necesario por favor indicar horarios de los eventos en los <b>detalles</b>. </br>
-          En caso de no ser requerida la <b>fecha fin</b> no es requerida.</p>
+          En caso de no ser necesaria la <b>fecha fin</b> no es requerida.</p>
         </br>
         <hr></br>
         <form action="dashboard.php" method="post">

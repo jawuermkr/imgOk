@@ -13,7 +13,7 @@ $mesFin = date('Y-m-t');
 <html>
 
 <head>
-  <title>Marketing Latino - Mio | Verda Luno</title>
+  <title>Marketing CreA | by: Verda Luno</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -108,6 +108,22 @@ $mesFin = date('Y-m-t');
       </div>
       <div class="col-md-4">
         </br>
+        <?php
+if($_SESSION['rol'] == 'admin'){
+  ?>
+  <form action="consultas.php" method="post">
+  <label>ID para actualizar</label>
+  <input class="form-control" type="text" name="id">
+  <select class="form-control" type="text" name="estado">
+  <option value="" disabled selected>--Seleccionar--</option>
+  <option value="Lista">Lista</option>
+  <option value="Publicada">Publicada</option>
+</select>
+<input class="form-control btn btn-success" type="submit" name="act" value="Actualizar">
+</form>
+<?php
+}
+      ?>
         <?php
           include('graficos/zonas.php');
         ?>
