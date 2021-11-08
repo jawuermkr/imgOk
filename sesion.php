@@ -36,4 +36,3 @@ if (isset($_POST['btnStart'])) {
 if ($_SESSION['correcto'] != 1) {
     header('Location:index.php');
 }
-?>
