@@ -93,7 +93,7 @@ $mesFin = date('Y-m-t');
                   <td><?php echo $libro['zona']; ?></td>
                   <td><?php echo $libro['tipo']; ?></td>
                   <td><?php echo $libro['pauta']; ?></td>
-                  <td><?php echo $libro['detalles']; ?></td>
+                  <td <td style="display:block; overflow-y:scroll;  max-height:300px; max-width:250px;"><?php echo $libro['detalles']; ?></td>
                   <td><?php echo $libro['estado']; ?></td>
                 </tr>
               <?php } ?>
